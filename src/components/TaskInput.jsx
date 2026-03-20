@@ -3,7 +3,13 @@ import { useState } from "react";
 function TaskInput({ addTask }) {
     const [text, setText] = useState("");
 
-    const handleAdd = () => {
+    const handleAdd1 = () => {
+        if (!text) return;
+        addTask(text);
+        setText("");
+    };
+
+    const handleAdd2 = () => {
         if (!text) return;
         addTask(text);
         setText("");
@@ -16,7 +22,8 @@ function TaskInput({ addTask }) {
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Add task..."
             />
-            <button onClick={handleAdd}>Add</button>
+            <button onClick={handleAdd1}>Add</button>
+            <button onClick={handleAdd2}>Delete</button>
         </div>
     );
 }
