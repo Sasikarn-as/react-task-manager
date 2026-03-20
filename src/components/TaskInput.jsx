@@ -9,11 +9,6 @@ function TaskInput({ addTask }) {
         setText("");
     };
 
-    const handleAdd2 = () => {
-        if (!text) return;
-        addTask(text);
-        setText("");
-    };
 
     return (
         <div>
@@ -23,7 +18,6 @@ function TaskInput({ addTask }) {
                 placeholder="Add task..."
             />
             <button onClick={handleAdd1}>Add</button>
-            <button onClick={handleAdd2}>Delete</button>
         </div>
     );
 }
